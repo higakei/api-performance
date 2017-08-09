@@ -14,3 +14,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 # API performance test
 GET     /test                       controllers.TestController.index
+GET     /test2                      controllers.TestController.test2(size: Int ?= 10)

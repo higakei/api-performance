@@ -38,7 +38,7 @@ class TestController @Inject() extends Controller {
       Map(s"key$i" -> s"value$i")
     }
     val json = Json.obj("results" -> list)
-    println(s"size $size:${json.toString().getBytes.length} bytes")
+    //println(s"size $size:${json.toString().getBytes.length} bytes")
     json
   }
 }

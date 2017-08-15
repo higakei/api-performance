@@ -12,11 +12,11 @@ func main() {
 	http.HandleFunc("/testString", testString)
 	http.HandleFunc("/testMap", testMap)
 	http.HandleFunc("/test2", test2)
-	http.ListenAndServe(":7001", nil)
+	http.ListenAndServe(":57001", nil)
 }
 
 func index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "go api")
+	fmt.Fprintln(w, "go api")
 }
 
 func testString(w http.ResponseWriter, r *http.Request) {

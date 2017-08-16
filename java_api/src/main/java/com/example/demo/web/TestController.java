@@ -42,19 +42,14 @@ public class TestController {
         return createResponse4(size.orElse(10).intValue());
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/test2ByIndex/{size}", "/test2ByIndex"})
-    public Map<String, Object> test2ByIndex(@PathVariable(name = "size", required = false) Optional<Integer> size) {
-        return createResponse5(size.orElse(10).intValue());
-    }
-
     @RequestMapping(method = RequestMethod.GET, path = {"/test2AfterInitialize2/{size}", "/test2AfterInitialize2"})
     public Map<String, Object> test2AfterInitialize2(@PathVariable(name = "size", required = false) Optional<Integer> size) {
-        return createResponse6(size.orElse(10).intValue());
+        return createResponse5(size.orElse(10).intValue());
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/test2ByLinkedList2/{size}", "/test2ByLinkedList2"})
     public Map<String, Object> test2ByLinkedList2(@PathVariable(name = "size", required = false) Optional<Integer> size) {
-        return createResponse7(size.orElse(10).intValue());
+        return createResponse6(size.orElse(10).intValue());
     }
 
     private Map<String, Object> createResponse(int size) {
@@ -115,20 +110,6 @@ public class TestController {
 
     private Map<String, Object> createResponse5(int size) {
 
-        List<Map<String, String>> list = new ArrayList<Map<String, String>>();
-        for (int i = 1; i <= size; i++) {
-            Map<String, String> map = new HashMap<String, String>();
-            map.put("key" + i, "value" + i);
-            list.add(i, map);
-        }
-
-        Map<String, Object> map = new HashMap<String, Object>();
-        map.put("results", list);
-        return map;
-    }
-
-    private Map<String, Object> createResponse6(int size) {
-
         List<Map<String, String>> list = new ArrayList<Map<String, String>>(size);
         for (int i = 0; i < size; i++) {
             Map<String, String> map = new HashMap<String, String>();
@@ -141,7 +122,7 @@ public class TestController {
         return map;
     }
 
-    private Map<String, Object> createResponse7(int size) {
+    private Map<String, Object> createResponse6(int size) {
 
         List<Map<String, String>> list = new LinkedList<Map<String, String>>();
         for (int i = 0; i < size; i++) {

@@ -44,17 +44,17 @@ public class TestController {
 
     @RequestMapping(method = RequestMethod.GET, path = {"/test2ByIndex/{size}", "/test2ByIndex"})
     public Map<String, Object> test2ByIndex(@PathVariable(name = "size", required = false) Optional<Integer> size) {
-        return createResponse4(size.orElse(10).intValue());
+        return createResponse5(size.orElse(10).intValue());
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/test2AfterInitialize2/{size}", "/test2AfterInitialize2"})
     public Map<String, Object> test2AfterInitialize2(@PathVariable(name = "size", required = false) Optional<Integer> size) {
-        return createResponse4(size.orElse(10).intValue());
+        return createResponse6(size.orElse(10).intValue());
     }
 
     @RequestMapping(method = RequestMethod.GET, path = {"/test2ByLinkedList2/{size}", "/test2ByLinkedList2"})
     public Map<String, Object> test2ByLinkedList2(@PathVariable(name = "size", required = false) Optional<Integer> size) {
-        return createResponse4(size.orElse(10).intValue());
+        return createResponse7(size.orElse(10).intValue());
     }
 
     private Map<String, Object> createResponse(int size) {

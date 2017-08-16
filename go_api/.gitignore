@@ -1,4 +1,9 @@
 /.idea
 /*.iml
 .DS_Store
+/bin
+/pkg
+/src/golang.org
+/src/github.com
+
 

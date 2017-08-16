@@ -15,7 +15,7 @@ func main() {
 	router.GET("/testMap", testMap)
 	router.GET("/test2", test2Index)
 	router.GET("/test2/:size", test2)
-	http.ListenAndServe(":57001", router)
+	http.ListenAndServe(":65001", router)
 }
 
 func index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -65,8 +65,8 @@ func CreateTest2Response(size int) []map[string]string {
 
 	array := make([]map[string]string, size)
 	for i := 0; i < size; i++ {
-		key := "key" + strconv.Itoa(i+1)
-		value := "value" + strconv.Itoa(i+1)
+		key := "key" + strconv.Itoa(i + 1)
+		value := "value" + strconv.Itoa(i + 1)
 		array[i] = map[string]string{key: value}
 	}
 

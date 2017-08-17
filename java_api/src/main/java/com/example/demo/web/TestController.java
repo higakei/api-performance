@@ -82,15 +82,15 @@ public class TestController {
 
     private Map<String, Object> createResponse3(int size) {
 
-        Map<String, String>[] array = new Map[size];
+        Object[] array = new Object[size];
         for (int i = 0; i < size; i++) {
-            Map<String, String> map = new HashMap<String, String>();
+            HashMap<String, String> map = new HashMap<String, String>();
             map.put("key" + (i + 1), "value" + (i + 1));
             array[i] = map;
         }
 
         Map<String, Object> map = new HashMap<String, Object>();
-        map.put("results", Arrays.asList(array));
+        map.put("results", array);
         return map;
     }
 
@@ -135,5 +135,4 @@ public class TestController {
         map.put("results", list);
         return map;
     }
-
 }

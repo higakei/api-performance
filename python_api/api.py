@@ -26,6 +26,18 @@ def test2(size):
     response.headers['Content-Type'] = 'application/json; charset=utf-8'
     return response 
 
+@app.route('/test2Initialized/<int:size>')
+def test2Initialized(size):
+    lst = [{}] * size
+    for i in range(0, size):
+        jsn = {"key" + str(i +1):"value" + str(i + 1)}
+        lst[i] = jsn
+    mp = {"results":lst}
+
+    response = make_response(json.dumps(mp, ensure_ascii=False))
+    response.headers['Content-Type'] = 'application/json; charset=utf-8'
+    return response
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run('0.0.0.0', port=65000)
 
